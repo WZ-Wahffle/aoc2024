@@ -10,7 +10,12 @@ import java.nio.file.Path
 import java.util.Calendar
 import kotlin.io.path.writeText
 import kotlin.system.exitProcess
+import kotlin.system.measureNanoTime
+import kotlin.time.Duration
+import kotlin.time.DurationUnit
+import kotlin.time.ExperimentalTime
 
+@OptIn(ExperimentalTime::class)
 fun main() {
     val now = Calendar.getInstance()
     if (now.get(Calendar.YEAR) == 2024 &&
@@ -52,7 +57,7 @@ fun main() {
         } catch (_: Exception) {
             try {
                 Files.readAllLines(Path.of("resources/Day${day}Ex.txt"))
-            } catch(_: Exception) {
+            } catch (_: Exception) {
                 null
             }
         }
@@ -61,24 +66,33 @@ fun main() {
         } catch (_: Exception) {
             try {
                 Files.readAllLines(Path.of("resources/Day${day}Ex.txt"))
-            } catch(_: Exception) {
+            } catch (_: Exception) {
                 null
             }
         }
 
         if (firstExample != null) {
             println("Part 1 Example: ")
-            clazz.getDeclaredMethod("part1", List::class.java).invoke(instance, firstExample)
+            println("Took " + Duration.convert(measureNanoTime {
+                clazz.getDeclaredMethod("part1", List::class.java).invoke(instance, firstExample)
+            }.toDouble(), DurationUnit.NANOSECONDS, DurationUnit.MILLISECONDS) + " ms\n")
+
         }
         println("Part 1: ")
-        clazz.getDeclaredMethod("part1", List::class.java).invoke(instance, input)
+        println("Took " + Duration.convert(measureNanoTime {
+            clazz.getDeclaredMethod("part1", List::class.java).invoke(instance, input)
+        }.toDouble(), DurationUnit.NANOSECONDS, DurationUnit.MILLISECONDS) + " ms\n")
 
         if (secondExample != null) {
             println("Part 2 Example: ")
-            clazz.getDeclaredMethod("part2", List::class.java).invoke(instance, secondExample)
+            println("Took " + Duration.convert(measureNanoTime {
+                clazz.getDeclaredMethod("part2", List::class.java).invoke(instance, secondExample)
+            }.toDouble(), DurationUnit.NANOSECONDS, DurationUnit.MILLISECONDS) + " ms\n")
         }
 
         println("Part 2: ")
-        clazz.getDeclaredMethod("part2", List::class.java).invoke(instance, input)
+        println("Took " + Duration.convert(measureNanoTime {
+            clazz.getDeclaredMethod("part2", List::class.java).invoke(instance, input)
+        }.toDouble(), DurationUnit.NANOSECONDS, DurationUnit.MILLISECONDS) + " ms\n")
     }
 }
