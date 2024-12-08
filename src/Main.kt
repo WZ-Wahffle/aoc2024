@@ -16,8 +16,9 @@ import kotlin.time.DurationUnit
 import kotlin.time.ExperimentalTime
 
 @OptIn(ExperimentalTime::class)
-fun main() {
+fun main(args: Array<String>) {
     val now = Calendar.getInstance()
+    if(args.isNotEmpty()) now.set(Calendar.DATE, args[0].toInt())
     if (now.get(Calendar.YEAR) == 2024 &&
         now.get(Calendar.MONTH) == Calendar.DECEMBER &&
         now.get(Calendar.DATE) <= 25
