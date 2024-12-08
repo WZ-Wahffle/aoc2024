@@ -1,4 +1,4 @@
-class Day7 {
+class Day7: Day {
     private fun Long.decatenate(tail: Long): Long {
         return this.toString().dropLast(tail.toString().length).toLong()
     }
@@ -37,7 +37,7 @@ class Day7 {
         return sum || mul || concat
     }
 
-    fun part1(input: List<String>) {
+    override fun part1(input: List<String>) {
         println(input.fold(0.0) { acc, line ->
             val target = line.split(':')[0].toDouble()
             val numbers =
@@ -48,7 +48,7 @@ class Day7 {
         }.toLong())
     }
 
-    fun part2(input: List<String>) {
+    override fun part2(input: List<String>) {
         println(input.fold(0L) { acc, line ->
             val target = line.split(':')[0].toLong()
             val numbers =

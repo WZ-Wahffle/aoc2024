@@ -1,4 +1,4 @@
-class Day2 {
+class Day2: Day {
     private enum class Direction {
         ASC,
         DESC,
@@ -41,13 +41,13 @@ class Day2 {
         return Direction.NONE
     }
 
-    fun part1(input: List<String>) {
+    override fun part1(input: List<String>) {
         println(preProc(input).map {
             isSafe(it, findDirection(it))
         }.count { it })
     }
 
-    fun part2(input: List<String>) {
+    override fun part2(input: List<String>) {
         println(preProc(input).map {
             generateReducedLists(it).any { it2 ->
                 isSafe(it2, findDirection(it2))

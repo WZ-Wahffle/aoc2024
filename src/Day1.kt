@@ -1,7 +1,7 @@
 import kotlin.math.abs
 
-class Day1 {
-    fun part1(input: List<String>) {
+class Day1: Day {
+    override fun part1(input: List<String>) {
         val first = mutableListOf<Int>()
         val second = mutableListOf<Int>()
         input.forEach {
@@ -14,7 +14,7 @@ class Day1 {
         })
     }
 
-    fun part2(input: List<String>) {
+    override fun part2(input: List<String>) {
         val first = mutableListOf<Int>()
         val second = mutableListOf<Int>()
         input.forEach {

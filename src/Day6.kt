@@ -1,4 +1,4 @@
-class Day6 {
+class Day6: Day {
     private data class Point(val x: Int, val y: Int)
 
     private enum class Direction {
@@ -70,7 +70,7 @@ class Day6 {
         return reached
     }
 
-    fun part1(input: List<String>) {
+    override fun part1(input: List<String>) {
         val (obstacles, start, initialDirection) = preProc(input)
 
         val reached = getPath(input, obstacles, start, initialDirection).map { it.first }
@@ -78,7 +78,7 @@ class Day6 {
         println(reached.filter { it.x >= 0 && it.y >= 0 && it.x < input[0].length && it.y < input.size }.size)
     }
 
-    fun part2(input: List<String>) {
+    override fun part2(input: List<String>) {
         val (obstacles, start, initialDirection) = preProc(input)
 
         println(getPath(input, obstacles, start, initialDirection).map { it.first }.toSet()

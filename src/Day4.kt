@@ -1,6 +1,6 @@
 import kotlin.math.max
 
-class Day4 {
+class Day4: Day {
     private inline fun <reified T> List<List<T>>.transpose(): List<List<T>> {
         return List(this.size) { y ->
             List(this[0].size) { x ->
@@ -22,7 +22,7 @@ class Day4 {
         }
     }
 
-    fun part1(input: List<String>) {
+    override fun part1(input: List<String>) {
         println(
             input
                 .sumOf {
@@ -45,7 +45,7 @@ class Day4 {
 
     }
 
-    fun part2(input: List<String>) {
+    override fun part2(input: List<String>) {
         var count = 0
         for (y in input.indices.drop(1).dropLast(1)) {
             for (x in input[y].indices.drop(1).dropLast(1)) {
