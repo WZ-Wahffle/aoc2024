@@ -1,5 +1,6 @@
 import kotlin.math.max
 
+@Suppress("unused")
 class Day4: Day {
     private inline fun <reified T> List<List<T>>.transpose(): List<List<T>> {
         return List(this.size) { y ->

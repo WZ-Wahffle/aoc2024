@@ -1,3 +1,4 @@
+@Suppress("unused")
 class Day11 : Day {
     private fun <T> MutableMap<T, ULong>.addOrInc(elem: T, value: ULong) {
         if(!contains(elem)) this[elem] = 0UL

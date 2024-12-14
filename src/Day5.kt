@@ -1,3 +1,4 @@
+@Suppress("unused")
 class Day5: Day {
     private fun preProc(input: List<String>): Pair<Map<Int, List<Int>>, List<List<Int>>> {
         return input.filter { it.isNotEmpty() }.partition {

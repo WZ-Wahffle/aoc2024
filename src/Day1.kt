@@ -1,5 +1,6 @@
 import kotlin.math.abs
 
+@Suppress("unused")
 class Day1: Day {
     override fun part1(input: List<String>) {
         val first = mutableListOf<Int>()

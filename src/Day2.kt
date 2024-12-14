@@ -1,3 +1,4 @@
+@Suppress("unused")
 class Day2: Day {
     private enum class Direction {
         ASC,

@@ -1,3 +1,4 @@
+@Suppress("unused")
 class Day7: Day {
     private fun Long.decatenate(tail: Long): Long {
         return this.toString().dropLast(tail.toString().length).toLong()

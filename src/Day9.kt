@@ -1,3 +1,4 @@
+@Suppress("unused")
 class Day9 : Day {
     private data class Gap(var start: Int, var size: Int)
 

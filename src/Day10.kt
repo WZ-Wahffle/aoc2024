@@ -1,3 +1,4 @@
+@Suppress("unused")
 class Day10 : Day {
     private data class Point(val x: Int, val y: Int)
 

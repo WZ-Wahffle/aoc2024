@@ -1,3 +1,4 @@
+@Suppress("unused")
 class Day13 : Day {
     private data class Equation(
         val a11: Double,

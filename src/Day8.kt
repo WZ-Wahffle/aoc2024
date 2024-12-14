@@ -1,3 +1,4 @@
+@Suppress("unused")
 class Day8 : Day {
     private data class Point(val x: Int, val y: Int) {
         fun getVector(other: Point): Point = Point(other.x - x, other.y - y)

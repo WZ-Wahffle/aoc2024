@@ -1,5 +1,6 @@
 import kotlin.math.max
 
+@Suppress("unused")
 class Day12 : Day {
     private data class Point(val x: Int, val y: Int) {
         constructor(xy: Pair<Int, Int>) : this(xy.first, xy.second)

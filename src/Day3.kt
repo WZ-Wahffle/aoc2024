@@ -1,3 +1,4 @@
+@Suppress("unused")
 class Day3: Day {
     override fun part1(input: List<String>) {
         println("""mul\((?<first>\d{1,3}),(?<second>\d{1,3})\)""".toRegex()
