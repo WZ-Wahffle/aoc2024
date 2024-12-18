@@ -13,7 +13,7 @@ class Day18 : Day {
         }
     }
 
-    private enum class Direction() {
+    private enum class Direction {
         UP, DOWN, LEFT, RIGHT
     }
 
